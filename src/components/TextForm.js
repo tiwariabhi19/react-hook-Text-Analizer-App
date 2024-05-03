@@ -14,6 +14,12 @@ export default function TextForm(props) {
         setText(newText)
     }
 
+    const handledCleanClick = () => {
+        let newText = '';
+        setText(newText)
+    }
+
+
     const handledOnChange = (event) => {
         console.log("convert to upper case")
         setText(event.target.value)
@@ -28,11 +34,14 @@ export default function TextForm(props) {
             </div>
             <button className='btn btn-primary mx-1' onClick={handledUpClick}>Convert to Upper</button>
             <button className='btn btn-primary mx-1' onClick={handledLoClick}>Convert to Lower</button>
+            <button className='btn btn-primary mx-1' onClick={handledCleanClick}>Clear Content</button>
         </div>
         <div className="container my-2">
             <h2>Your text summary</h2>
             <p>{text.split(" ").length} Words and Charactors {text.length} </p>
             <p>{0.008*text.split(" ").length } Minutes read  </p>
+            <h3>Preview</h3>
+            <p>{text}</p>
         </div>
         </>
     )
